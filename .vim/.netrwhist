@@ -1,0 +1,9 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_1='/Users/balazar/code/embassy-pt'
+let g:netrw_dirhist_2='/Users/balazar/code/embassy-pt/_content'
+let g:netrw_dirhist_3='/Users/balazar/code/embassy-pt/_content/pages'
+let g:netrw_dirhist_4='/Users/balazar/code/embassy-pt/_content/pages/pt'
+let g:netrw_dirhist_5='/Users/balazar/code/go-ray-tracer'
+let g:netrw_dirhist_6='/Users/balazar/code/Tools/vim-config/.vim'
+let g:netrw_dirhist_7='/Users/balazar/code/Tools/vim-config/.vim/common_config'

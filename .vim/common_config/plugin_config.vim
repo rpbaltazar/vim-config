@@ -17,13 +17,12 @@
   Bundle "git://github.com/ervandew/supertab.git"
   Bundle "git://github.com/tomtom/tcomment_vim.git"
   Bundle "git://github.com/michaeljsmith/vim-indent-object.git"
-  Bundle "git://github.com/tsaleh/vim-matchit.git"
+  Bundle "git://github.com/eshock/vim-matchit.git"
   Bundle "git://github.com/kana/vim-textobj-user.git"
   Bundle "git://github.com/nelstrom/vim-textobj-rubyblock.git"
   Bundle "git://github.com/tpope/vim-repeat.git"
   Bundle "git://github.com/vim-scripts/ruby-matchit.git"
   Bundle "git://github.com/wgibbs/vim-irblack.git"
-" Bundle "git://github.com/wavded/vim-stylus.git"
   Bundle "git@github.com:tpope/vim-abolish.git"
 
 " Dash Searching"
@@ -32,12 +31,11 @@
     nmap <Leader>qs <Plug>DashSearch
     nmap <Leader>qa <Plug>DashGlobalSearch
 
-
 " CtrlP - with FuzzyFinder compatible keymaps
   Bundle "git://github.com/kien/ctrlp.vim.git"
-    nnoremap <Leader>b :<C-U>CtrlPBuffer<CR>
-    nnoremap <Leader>t :<C-U>CtrlP<CR>
-    nnoremap <Leader>T :<C-U>CtrlPTag<CR>
+    " nnoremap <Leader>b :<C-U>CtrlPBuffer<CR>
+    " nnoremap <Leader>t :<C-U>CtrlP<CR>
+    " nnoremap <Leader>T :<C-U>CtrlPTag<CR>
     let g:ctrlp_prompt_mappings = {
         \ 'PrtSelectMove("j")':   ['<down>'],
         \ 'PrtSelectMove("k")':   ['<up>'],
@@ -46,6 +44,8 @@
         \ }
     " respect the .gitignore
     let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . --cached --exclude-standard --others']
+    let g:ctrlp_map = '<c-p>'
+    let g:ctrlp_cmd = 'CtrlP'
 
 " Compile and deploy Arduino (*.pde) sketches directly from Vim
   Bundle "git://github.com/smerrill/vim-arduino.git"
@@ -56,14 +56,8 @@
   Bundle "git://github.com/jnwhiteh/vim-golang.git"
     au BufNewFile,BufRead *.go set filetype=go
 
-" Mustache
-  Bundle "git://github.com/juvenn/mustache.vim.git"
-    " Copied from the plugin; not sure why it isn't working normally
-    au BufNewFile,BufRead *.mustache,*.handlebars,*.hbs set filetype=mustache
-
-" Slim
-  Bundle "git://github.com/slim-template/vim-slim.git"
-    au BufNewFile,BufRead *.slim set filetype=slim
+" Vim Instant Markdown
+  Bundle "git://github.com/suan/vim-instant-markdown.git"
 
 " Less
   Bundle "git://github.com/groenewege/vim-less.git"
@@ -80,17 +74,6 @@
 " Coffee script
   Bundle "git://github.com/kchmck/vim-coffee-script.git"
     au BufNewFile,BufRead *.coffee set filetype=coffee
-
-
-" ACK
-" Bundle "git://github.com/mileszs/ack.vim.git"
-"   nmap g/ :Ack!<space>
-"   nmap g* :Ack! -w <C-R><C-W><space>
-"   nmap ga :AckAdd!<space>
-"   nmap gn :cnext<CR>
-"   nmap gp :cprev<CR>
-"   nmap gq :ccl<CR>
-"   nmap gl :cwindow<CR>
 
 " AG aka The Silver Searcher
   Bundle 'git://github.com/rking/ag.vim.git'
@@ -122,17 +105,17 @@
 
 
 " Markdown syntax highlighting
-  Bundle "git://github.com/tpope/vim-markdown.git"
-    augroup mkd
-      autocmd BufNewFile,BufRead *.mkd      set ai formatoptions=tcroqn2 comments=n:> filetype=markdown
-      autocmd BufNewFile,BufRead *.md       set ai formatoptions=tcroqn2 comments=n:> filetype=markdown
-      autocmd BufNewFile,BufRead *.markdown set ai formatoptions=tcroqn2 comments=n:> filetype=markdown
-    augroup END
-
+  " Bundle "git://github.com/tpope/vim-markdown.git"
+  "   augroup mkd
+  "     autocmd BufNewFile,BufRead *.mkd      set ai formatoptions=tcroqn2 comments=n:> filetype=markdown
+  "     autocmd BufNewFile,BufRead *.md       set ai formatoptions=tcroqn2 comments=n:> filetype=markdown
+  "     autocmd BufNewFile,BufRead *.markdown set ai formatoptions=tcroqn2 comments=n:> filetype=markdown
+  "   augroup END
+  "
 
 " Markdown preview to quickly preview markdown files
-  Bundle "git://github.com/maba/vim-markdown-preview.git"
-  map <buffer> <Leader>mp :Mm<CR>
+  " Bundle "git://github.com/maba/vim-markdown-preview.git"
+  " map <buffer> <Leader>mp :Mm<CR>
 
 
 " NERDTree for project drawer
@@ -163,8 +146,8 @@
     map <Leader>a :Tabularize<space>
 
 " ZoomWin to fullscreen a particular buffer without losing others
-  Bundle "git://github.com/vim-scripts/ZoomWin.git"
-    map <Leader>z :ZoomWin<CR>
+  " Bundle "git://github.com/vim-scripts/ZoomWin.git"
+  "   map <Leader>z :ZoomWin<CR>
 
 
 " Unimpaired for keymaps for quicky manipulating lines and files
