@@ -23,13 +23,14 @@
   Bundle "git://github.com/tpope/vim-repeat.git"
   Bundle "git://github.com/vim-scripts/ruby-matchit.git"
   Bundle "git://github.com/wgibbs/vim-irblack.git"
-  Bundle "git@github.com:tpope/vim-abolish.git"
+  Bundle "git://github.com/tpope/vim-abolish.git"
+  Bundle "git://github.com/ap/vim-css-color.git"
 
 " Dash Searching"
-  Bundle "git@github.com:rizzatti/funcoo.vim.git"
-  Bundle "git@github.com:rizzatti/dash.vim.git"
-    nmap <Leader>qs <Plug>DashSearch
-    nmap <Leader>qa <Plug>DashGlobalSearch
+  " Bundle "git@github.com:rizzatti/funcoo.vim.git"
+  " Bundle "git@github.com:rizzatti/dash.vim.git"
+  "   nmap <Leader>qs <Plug>DashSearch
+  "   nmap <Leader>qa <Plug>DashGlobalSearch
 
 " CtrlP - with FuzzyFinder compatible keymaps
   Bundle "git://github.com/kien/ctrlp.vim.git"
@@ -48,9 +49,9 @@
     let g:ctrlp_cmd = 'CtrlP'
 
 " Compile and deploy Arduino (*.pde) sketches directly from Vim
-  Bundle "git://github.com/smerrill/vim-arduino.git"
-    au BufNewFile,BufRead *.pde set filetype=arduino
-    au BufNewFile,BufRead *.ino set filetype=arduino
+  " Bundle "git://github.com/smerrill/vim-arduino.git"
+  "   au BufNewFile,BufRead *.pde set filetype=arduino
+  "   au BufNewFile,BufRead *.ino set filetype=arduino
 
 " Go
   Bundle "git://github.com/jnwhiteh/vim-golang.git"
@@ -64,8 +65,7 @@
     au BufNewFile,BufRead *.less set filetype=less
 
 " Handlebars
-  Bundle "git://github.com/nono/vim-handlebars.git"
-    au BufNewFile,BufRead *.hbs,*.hb set filetype=handlebars
+  Bundle 'mustache/vim-mustache-handlebars'
 
 " Stylus
   Bundle "git://github.com/wavded/vim-stylus.git"
@@ -95,28 +95,13 @@
 
 " Ruby focused unit test (wrapped in an if-loaded because it doesn't like
 " being loaded twice)
-  if !exists(':RunRubyFocusedUnitTest')
-    Bundle "git://github.com/drewolson/ruby_focused_unit_test_vim.git"
-      nmap <Leader>ra :wa<CR> :RunAllRubyTests<CR>
-      nmap <Leader>rc :wa<CR> :RunRubyFocusedContext<CR>
-      nmap <Leader>rf :wa<CR> :RunRubyFocusedUnitTest<CR>
-      nmap <Leader>rl :wa<CR> :RunLastRubyTest<CR>
-  endif
-
-
-" Markdown syntax highlighting
-  " Bundle "git://github.com/tpope/vim-markdown.git"
-  "   augroup mkd
-  "     autocmd BufNewFile,BufRead *.mkd      set ai formatoptions=tcroqn2 comments=n:> filetype=markdown
-  "     autocmd BufNewFile,BufRead *.md       set ai formatoptions=tcroqn2 comments=n:> filetype=markdown
-  "     autocmd BufNewFile,BufRead *.markdown set ai formatoptions=tcroqn2 comments=n:> filetype=markdown
-  "   augroup END
-  "
-
-" Markdown preview to quickly preview markdown files
-  " Bundle "git://github.com/maba/vim-markdown-preview.git"
-  " map <buffer> <Leader>mp :Mm<CR>
-
+  " if !exists(':RunRubyFocusedUnitTest')
+  "   Bundle "git://github.com/drewolson/ruby_focused_unit_test_vim.git"
+  "     nmap <Leader>ra :wa<CR> :RunAllRubyTests<CR>
+  "     nmap <Leader>rc :wa<CR> :RunRubyFocusedContext<CR>
+  "     nmap <Leader>rf :wa<CR> :RunRubyFocusedUnitTest<CR>
+  "     nmap <Leader>rl :wa<CR> :RunLastRubyTest<CR>
+  " endif
 
 " NERDTree for project drawer
   Bundle "git://github.com/scrooloose/nerdtree.git"
@@ -144,11 +129,6 @@
 
     " shortcut to align text with Tabular
     map <Leader>a :Tabularize<space>
-
-" ZoomWin to fullscreen a particular buffer without losing others
-  " Bundle "git://github.com/vim-scripts/ZoomWin.git"
-  "   map <Leader>z :ZoomWin<CR>
-
 
 " Unimpaired for keymaps for quicky manipulating lines and files
   Bundle "git://github.com/tpope/vim-unimpaired.git"
@@ -182,7 +162,6 @@
 
     let g:gist_detect_filetype = 1
     let g:gist_open_browser_after_post = 1
-
 
 " gundo for awesome undo tree visualization
   Bundle "git://github.com/sjl/gundo.vim.git"

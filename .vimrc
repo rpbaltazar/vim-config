@@ -12,7 +12,8 @@ colorscheme railscasts2
 set gfn=Monaco:h13
 
 au BufNewFile,BufRead *.ejs set filetype=html
+au BufRead,BufNewFile *.hamlc set ft=haml
 
 " https://github.com/suan/vim-instant-markdown
 filetype plugin on
-set shell=bash\ -i
+set shell=zsh\ -i
