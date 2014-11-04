@@ -205,3 +205,6 @@
   Bundle "git://github.com/elixir-lang/vim-elixir.git"
     au BufNewFile,BufRead *.ex set filetype=elixir
     au BufNewFile,BufRead *.exs set filetype=elixir
+
+" colorscheme: gruvbox
+  Bundle 'morhetz/gruvbox'

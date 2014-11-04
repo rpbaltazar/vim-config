@@ -71,3 +71,6 @@
 " jump to far right or left of line
   map L $
   map H ^
+
+" convert buffer javascript into coffee
+  map <leader>pc :PasteAsCoffee<CR>

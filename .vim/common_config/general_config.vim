@@ -4,10 +4,6 @@
 " enable syntax highlighting
   syntax on
 
-" default color scheme
-"  set background=dark
-"  color railscasts2
-
 " don't wrap long lines
   set nowrap
 
