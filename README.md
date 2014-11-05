@@ -366,18 +366,4 @@ Ships with a few additional syntaxes:
 
 ## Color schemes
 
-Includes the vim color sampler pack, which includes [over 100
-popular color themes](http://www.vi-improved.org/color_sampler_pack/):
-
-* jellybeans
-* matrix
-* railscasts2
-* tango
-* vibrantink
-* vividchalk
-* wombat
-* xoria256
-
-Use `:color vibrantink` to switch to a color scheme.
-
 
