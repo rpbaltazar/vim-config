@@ -2,10 +2,8 @@
 " install plugins.
 
 " Plugins requiring no additional configuration or keymaps
-  Bundle "git://github.com/oscarh/vimerl.git"
   Bundle "git://github.com/tpope/vim-git.git"
   Bundle "git://github.com/harleypig/vcscommand.vim.git"
-  Bundle "git://github.com/altercation/vim-colors-solarized.git"
   Bundle "git://github.com/tpope/vim-cucumber.git"
   Bundle "git://github.com/tpope/vim-endwise.git"
   Bundle "git://github.com/tpope/vim-fugitive.git"
@@ -206,5 +204,10 @@
     au BufNewFile,BufRead *.ex set filetype=elixir
     au BufNewFile,BufRead *.exs set filetype=elixir
 
-" colorscheme: gruvbox
+" Colorschemes
+"" Gruvbox
   Bundle 'morhetz/gruvbox'
+"" Vim-coffee
+  Plugin 'duythinht/vim-coffee'
+"" Gotham
+  Plugin 'whatyouhide/vim-gotham'

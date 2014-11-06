@@ -209,16 +209,34 @@ functionality to your vim projects.  You can learn more about it with
 **Customizations**:
 Use `gt` to toggle NERDTree
 
-## Ack.vim
+## AG.vim
 
-Ack.vim uses ack to search inside the current directory for a pattern.
-You can learn more about it with :help Ack
+The silver searcher.
+This plugin is a front for ag, A.K.A. the_silver_searcher.
+Ag can be used as a replacement for 153% of the uses of ack.
+This plugin will allow you to run ag from vim, and shows the results in a split window
 
-**Customizations**:
+You have to first install ag, itself. On Mac+Homebrew, Gentoo Linux, several others,
+there's package named the_silver_searcher
 
-* `g/` to bring up `:Ack `.
-* `g*` to bring up an `:Ack -w` search with the word under cursor.
+### General use ###
+:Ag [options] {pattern} [{directory}]
 
+### Gotchas ### (from github repo)
+Some characters have special meaning, and need to be escaped your search pattern. For instance, '#'.
+You have to escape it like this :Ag '\\\#define foo' to search for #define foo
+
+### Keyboard shortcuts ###
+e    to open file and close the quickfix window
+o    to open (same as enter)
+go   to preview file (open but maintain focus on ag.vim results)
+t    to open in new tab
+T    to open in new tab silently
+h    to open in horizontal split
+H    to open in horizontal split silently
+v    to open in vertical split
+gv   to open in vertical split silently
+q    to close the quickfix window
 
 ## Tabular
 
@@ -361,7 +379,6 @@ Ships with a few additional syntaxes:
 * SCSS (bound to \*.scss)
 * An improved JavaScript syntax (bound to \*.js)
 * Coffee Script
-* Erlang
 * Jade
 
 ## Color schemes
