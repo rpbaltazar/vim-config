@@ -8,7 +8,7 @@ runtime! custom_config/*.vim
 " for git, add spell checking and automatic wrapping at 72 columns
 autocmd Filetype gitcommit setlocal spell textwidth=72
 
-colorscheme railscasts2
+colorscheme gotham
 set gfn=Monaco:h13
 
 au BufNewFile,BufRead *.ejs set filetype=html
