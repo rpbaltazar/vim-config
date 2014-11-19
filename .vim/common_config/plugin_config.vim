@@ -7,7 +7,6 @@
   Bundle "git://github.com/tpope/vim-cucumber.git"
   Bundle "git://github.com/tpope/vim-endwise.git"
   Bundle "git://github.com/tpope/vim-fugitive.git"
-  Bundle "git://github.com/tpope/vim-haml.git"
   Bundle "git://github.com/pangloss/vim-javascript.git"
   Bundle "git://github.com/vim-scripts/L9.git"
   Bundle "git://github.com/tpope/vim-rake.git"
@@ -23,6 +22,14 @@
   Bundle "git://github.com/wgibbs/vim-irblack.git"
   Bundle "git://github.com/tpope/vim-abolish.git"
   Bundle "git://github.com/ap/vim-css-color.git"
+
+" Colorschemes
+"" Gruvbox
+  Bundle 'morhetz/gruvbox'
+"" Vim-coffee
+  Plugin 'duythinht/vim-coffee'
+"" Gotham
+  Plugin 'whatyouhide/vim-gotham'
 
 " Dash Searching"
   " Bundle "git@github.com:rizzatti/funcoo.vim.git"
@@ -204,10 +211,12 @@
     au BufNewFile,BufRead *.ex set filetype=elixir
     au BufNewFile,BufRead *.exs set filetype=elixir
 
-" Colorschemes
-"" Gruvbox
-  Bundle 'morhetz/gruvbox'
-"" Vim-coffee
-  Plugin 'duythinht/vim-coffee'
-"" Gotham
-  Plugin 'whatyouhide/vim-gotham'
+" Haml Highlight
+  Bundle "git://github.com/tpope/vim-haml.git"
+    au BufRead,BufNewFile *.hamlc set ft=haml
+
+" LaTeX
+  Plugin 'LaTeX-Box-Team/LaTeX-Box'
+    " set default latex compiler to be latexmk
+    let g:Tex_CompileRule_pdf = 'latexmk -pdf'
+    :nmap <C-l> :Latexmk<cr>
