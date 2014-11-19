@@ -4,16 +4,16 @@ require './lib/translation'
 
 MAC_FILES =
   { '.vimrc'           => '~/.vimrc',
-    '.gvimrc'          => '~/.gvimrc',
     '.vim'             => '~/.vim' }
 
-WINDOW_FILES =
-  { '.vimrc'           => '~/_vimrc',
-    '.gvimrc'          => '~/_gvimrc',
-    '.vim'             => '~/vimfiles',
-    'windows/ack.bat'  => 'c:\RailsInstaller\Git\cmd\ack.bat',
-    'windows/ack.pl'   => 'c:\RailsInstaller\Git\cmd\ack.pl',
-    'windows/curl.cmd' => 'c:\RailsInstaller\Git\cmd\curl.cmd' }
+WITH_ASSETS = {
+  "assets/fonts/Inconsolata/*.otf" => "~/Library/Fonts",
+  "assets/custom_configs/inconsolata.vim" => "~/.vim/custom_configs/vim_looks.vim"
+}
+
+WITHOUT_ASSETS = {
+  "assets/custom_configs/monaco.vim" => "~/.vim/custom_configs/vim_looks.vim"
+}
 
 desc "Install vim configuration and plugin files"
 task :default do
@@ -27,6 +27,7 @@ task :default do
     end
   end
   Rake::Task['vundle'].execute
+  Rake::Task['assets'].execute
 end
 
 desc "Install vundle for vim plugins"
@@ -38,8 +39,37 @@ task :vundle do
   puts "vim plugins installed."
 end
 
+desc "Copy fonts"
+task :assets do
+  if prompt_to_copy_assets
+    assets = Installer.new WITH_ASSETS
+    puts "Set Inconsolata font as default and set colorscheme to Tomorrow-Night-Eighties"
+  else
+    assets = Installer.new WITHOUT_ASSETS
+    puts "Set Monaco font as default and set colorscheme to Tomorrow-Night-Eighties"
+  end
+
+  assets.files.each do |f|
+    case
+      when f.identical? then skip_file f
+      else copy_files f
+    end
+  end
+
+end
+
 def platform_files
-  Installer.windows? ? WINDOW_FILES : MAC_FILES
+  MAC_FILES
+end
+
+def prompt_to_copy_assets
+  print "Do you wish to copy the fonts to ~/Library/Fonts? [Y/n]"
+  case $stdin.gets.chomp
+    when 'Y','y' then
+      true
+    else
+      false
+  end
 end
 
 def prompt_to_link_files(file)
@@ -73,6 +103,10 @@ end
 
 def skip_file(file)
   puts " => skipping #{file.target}"
+end
+
+def copy_files file
+  file.copy
 end
 
 def auto_link_files(file)

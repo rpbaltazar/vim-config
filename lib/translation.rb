@@ -16,6 +16,12 @@ class Translation
     `ln -s \"#{source}\" \"#{target}\"`
   end
 
+  def copy
+    path = File.dirname target
+    FileUtils.mkdir_p path unless File.exists? path
+    Dir.glob(source) {|f| FileUtils.cp File.expand_path(f), target }
+  end
+
   def force_link
     FileUtils.rm_rf(target) && link
   end
