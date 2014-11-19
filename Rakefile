@@ -4,16 +4,7 @@ require './lib/translation'
 
 MAC_FILES =
   { '.vimrc'           => '~/.vimrc',
-    '.gvimrc'          => '~/.gvimrc',
     '.vim'             => '~/.vim' }
-
-WINDOW_FILES =
-  { '.vimrc'           => '~/_vimrc',
-    '.gvimrc'          => '~/_gvimrc',
-    '.vim'             => '~/vimfiles',
-    'windows/ack.bat'  => 'c:\RailsInstaller\Git\cmd\ack.bat',
-    'windows/ack.pl'   => 'c:\RailsInstaller\Git\cmd\ack.pl',
-    'windows/curl.cmd' => 'c:\RailsInstaller\Git\cmd\curl.cmd' }
 
 desc "Install vim configuration and plugin files"
 task :default do
@@ -27,6 +18,7 @@ task :default do
     end
   end
   Rake::Task['vundle'].execute
+  Rake::Task['assets'].execute
 end
 
 desc "Install vundle for vim plugins"
@@ -38,8 +30,22 @@ task :vundle do
   puts "vim plugins installed."
 end
 
+desc "Copy fonts"
+task :assets do
+  puts "Do you wish to copy the fonts to ~/Library/Fonts? [Y/n]"
+  if gets.chomp!.downcase == 'n'
+    #set the default font to monaco in vimrc file
+    puts "Nothing was copied. You can copy these manually later"
+    return
+  else
+    #copy assets/fonts/*.otf to ~/Library/Fonts
+    #set the default font to inconsolata in vimrc file
+  end
+
+end
+
 def platform_files
-  Installer.windows? ? WINDOW_FILES : MAC_FILES
+  MAC_FILES
 end
 
 def prompt_to_link_files(file)
