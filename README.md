@@ -17,12 +17,11 @@ This config is built primarily to work on top of the OSX version of `MacVim`, by
 Customizations can be added to the folder `.vim/custom_config/`.
 
 * Any files with a `.vim` extension in that folder will be loaded when running all versions of `vim`.
-* Any files with a `.gvim` extension in that folder will be loaded when running a graphical version of `vim`.
 
-You can add custom plugins by registering them in a `.vim` file in the custom_config folder with the same `Bundle "plugin-repo-url"`
+You can add custom plugins by registering them in a `.vim` file in the custom_config folder with the same `Plugin "plugin-repo-url"`
 syntax used in the `.vim/common_config/plugin_config.vim`, and then performing steps 3 & 4 from the install steps above.
 
-Common practice is to symlink a folder containing your custom configuration files as the `.vim/custom_config` folder.
+Common practice is to symlink a folder containing your custom configuration files as the `.vim/custom_configs` folder.
 
 ## Key mappings (remember case matters!)
 
