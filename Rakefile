@@ -7,7 +7,7 @@ MAC_FILES =
     '.vim'             => '~/.vim' }
 
 WITH_ASSETS = {
-  "assets/fonts/" => "~/Library/Fonts",
+  "assets/fonts/Inconsolata/*.otf" => "~/Library/Fonts",
   "assets/custom_configs/inconsolata.vim" => "~/.vim/custom_configs/vim_looks.vim"
 }
 
@@ -65,10 +65,11 @@ end
 def prompt_to_copy_assets
   print "Do you wish to copy the fonts to ~/Library/Fonts? [Y/n]"
   case $stdin.gets.chomp
-    when 'Y' || 'y' then true
-    else false
+    when 'Y','y' then
+      true
+    else
+      false
   end
-
 end
 
 def prompt_to_link_files(file)

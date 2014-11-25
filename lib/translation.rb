@@ -17,9 +17,9 @@ class Translation
   end
 
   def copy
-    raise "This source file does not exist: #{source}" unless source_exists?
-    FileUtils.mkdir_p File.dirname(target)
-    FileUtils.cp_r source, target
+    path = File.dirname target
+    FileUtils.mkdir_p path unless File.exists? path
+    Dir.glob(source) {|f| FileUtils.cp File.expand_path(f), target }
   end
 
   def force_link
