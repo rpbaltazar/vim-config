@@ -6,6 +6,15 @@ MAC_FILES =
   { '.vimrc'           => '~/.vimrc',
     '.vim'             => '~/.vim' }
 
+WITH_ASSETS = {
+  "assets/fonts/*.otf" => "~/Library/Fonts",
+  "assets/custom_configs/inconsolata.vim" => "~/.vim/custom_configs/vim_looks.vim"
+}
+
+WITHOUT_ASSETS = {
+  "assets/custom_configs/monaco.vim" => "~/.vim/custom_configs/vim_looks.vim"
+}
+
 desc "Install vim configuration and plugin files"
 task :default do
   installer = Installer.new(platform_files)
@@ -32,20 +41,34 @@ end
 
 desc "Copy fonts"
 task :assets do
-  puts "Do you wish to copy the fonts to ~/Library/Fonts? [Y/n]"
-  if gets.chomp!.downcase == 'n'
-    #set the default font to monaco in vimrc file
-    puts "Nothing was copied. You can copy these manually later"
-    return
+  if prompt_to_copy_assets
+    assets = Installer.new WITH_ASSETS
+    puts "Set Inconsolata font as default and set colorscheme to Tomorrow-Night-Eighties"
   else
-    #copy assets/fonts/*.otf to ~/Library/Fonts
-    #set the default font to inconsolata in vimrc file
+    assets = Installer.new WITHOUT_ASSETS
+    puts "Set Monaco font as default and set colorscheme to Tomorrow-Night-Eighties"
+  end
+
+  assets.files.each do |f|
+    case
+      when f.identical? then skip_file f
+      else copy_files f
+    end
   end
 
 end
 
 def platform_files
   MAC_FILES
+end
+
+def prompt_to_copy_assets
+  print "Do you wish to copy the fonts to ~/Library/Fonts? [Y/n]"
+  case $stdin.gets.chomp
+    when 'Y' || 'y' then true
+    else false
+  end
+
 end
 
 def prompt_to_link_files(file)
@@ -79,6 +102,10 @@ end
 
 def skip_file(file)
   puts " => skipping #{file.target}"
+end
+
+def copy_files file
+  file.copy
 end
 
 def auto_link_files(file)
