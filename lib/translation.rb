@@ -16,6 +16,12 @@ class Translation
     `ln -s \"#{source}\" \"#{target}\"`
   end
 
+  def copy
+    raise "This source file does not exist: #{source}" unless source_exists?
+    FileUtils.mkdir_p File.dirname(target)
+    FileUtils.cp_r source, target
+  end
+
   def force_link
     FileUtils.rm_rf(target) && link
   end

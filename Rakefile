@@ -7,7 +7,7 @@ MAC_FILES =
     '.vim'             => '~/.vim' }
 
 WITH_ASSETS = {
-  "assets/fonts/*.otf" => "~/Library/Fonts",
+  "assets/fonts/" => "~/Library/Fonts",
   "assets/custom_configs/inconsolata.vim" => "~/.vim/custom_configs/vim_looks.vim"
 }
 
