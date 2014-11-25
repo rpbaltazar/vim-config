@@ -62,9 +62,6 @@
   Bundle "git://github.com/jnwhiteh/vim-golang.git"
     au BufNewFile,BufRead *.go set filetype=go
 
-" Vim Instant Markdown
-  Bundle "git://github.com/suan/vim-instant-markdown.git"
-
 " Less
   Bundle "git://github.com/groenewege/vim-less.git"
     au BufNewFile,BufRead *.less set filetype=less
