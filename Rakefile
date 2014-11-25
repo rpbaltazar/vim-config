@@ -55,7 +55,24 @@ task :assets do
       else copy_files f
     end
   end
+end
 
+desc "Install needed software"
+task :addons do
+  case Installer.which_os?
+    when Installer::MAC_OS then
+      `brew install ag`
+    when Installer::LINUX_OS
+      <<-howto
+        Please make sure you install Ag (the silver searcher) for the plugin to work
+        In Ubuntu, you can install it via
+        sudo add-apt-repository ppa:pgolm/the-silver-searcher
+        sudo apt-get update
+        sudo apt-get install the-silver-searcher
+      howto
+    else
+      puts "Please make sure you install Ag (the silver searcher) for the plugin to work"
+  end
 end
 
 def platform_files

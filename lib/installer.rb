@@ -4,6 +4,10 @@ require 'rake/win32'
 class Installer
   attr_accessor :translations, :files
 
+  MAC_OS=1
+  LINUX_OS=2
+  UNKNOWN=3
+
   def initialize(translations)
     @translations = translations
     @files = translations.map { |k,v| Translation.new(k, v) }
@@ -32,5 +36,16 @@ class Installer
 
   def self.normalize(path)
     Rake::Win32.normalize(path)
+  end
+
+  def self.which_os?
+
+    if (/darwin/ =~ RUBY_PLATFORM) > 0
+      MAC_OS
+    elsif (/linux/ =~ RUBY_PLATFORM) > 0
+      LINUX_OS
+    else
+      UNKNOWN
+    end
   end
 end
