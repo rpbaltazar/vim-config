@@ -23,6 +23,27 @@
   Bundle "git://github.com/tpope/vim-abolish.git"
   Bundle "git://github.com/ap/vim-css-color.git"
 
+" Tabular for aligning text
+  Plugin 'godlygeek/tabular'
+    function! CustomTabularPatterns()
+      if exists('g:tabular_loaded')
+        AddTabularPattern! symbols         / :/l0
+        AddTabularPattern! hash            /^[^>]*\zs=>/
+        AddTabularPattern! chunks          / \S\+/l0
+        AddTabularPattern! assignment      / = /l0
+        AddTabularPattern! comma           /^[^,]*,/l1
+        AddTabularPattern! colon           /:\zs /l0
+        AddTabularPattern! options_hashes  /:\w\+ =>/
+      endif
+    endfunction
+
+    autocmd VimEnter * call CustomTabularPatterns()
+
+    " shortcut to align text with Tabular
+    map <Leader>a :Tabularize<space>
+
+  Plugin 'plasticboy/vim-markdown'
+
 " Colorschemes
 "" Gruvbox
   Bundle 'morhetz/gruvbox'
@@ -113,24 +134,6 @@
     nmap g :NERDTree \| NERDTreeToggle \| NERDTreeFind<CR>
 
 
-" Tabular for aligning text
-  Bundle "git://github.com/godlygeek/tabular.git"
-    function! CustomTabularPatterns()
-      if exists('g:tabular_loaded')
-        AddTabularPattern! symbols         / :/l0
-        AddTabularPattern! hash            /^[^>]*\zs=>/
-        AddTabularPattern! chunks          / \S\+/l0
-        AddTabularPattern! assignment      / = /l0
-        AddTabularPattern! comma           /^[^,]*,/l1
-        AddTabularPattern! colon           /:\zs /l0
-        AddTabularPattern! options_hashes  /:\w\+ =>/
-      endif
-    endfunction
-
-    autocmd VimEnter * call CustomTabularPatterns()
-
-    " shortcut to align text with Tabular
-    map <Leader>a :Tabularize<space>
 
 " Unimpaired for keymaps for quicky manipulating lines and files
   Bundle "git://github.com/tpope/vim-unimpaired.git"
