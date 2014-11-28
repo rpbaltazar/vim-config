@@ -15,6 +15,10 @@ WITHOUT_ASSETS = {
   "assets/custom_configs/monaco.vim" => "~/.vim/custom_configs/vim_looks.vim"
 }
 
+ADDONS = {
+  "AG" => "Ag - the silver searcher"
+}
+
 desc "Install vim configuration and plugin files"
 task :default do
   installer = Installer.new(platform_files)
@@ -42,7 +46,7 @@ end
 
 desc "Copy fonts"
 task :assets do
-  if prompt_to_copy_assets
+  if prompt_user "Do you wish to copy the fonts to ~/Library/Fonts? [Y/n]\n"
     assets = Installer.new WITH_ASSETS
     puts "Set Inconsolata font as default and set colorscheme to Tomorrow-Night-Eighties"
   else
@@ -60,19 +64,36 @@ end
 
 desc "Install needed software"
 task :addons do
+  ADDONS.each do |key, description|
+    if prompt_user "Do you want to install #{description}? [Y/n]\n"
+      case key
+      when "AG"
+        install_ag
+      else
+        <<-ERROR
+         Installer not found for #{description}.
+         Please open a bug report:
+         https://github.com/rpbaltazar/vim-config/issues
+        ERROR
+      end
+    end
+  end
+end
+
+def install_ag
   case Installer.which_os?
-    when Installer::MAC_OS then
-      `brew install ag`
-    when Installer::LINUX_OS
-      <<-howto
-        Please make sure you install Ag (the silver searcher) for the plugin to work
-        In Ubuntu, you can install it via
-        sudo add-apt-repository ppa:pgolm/the-silver-searcher
-        sudo apt-get update
-        sudo apt-get install the-silver-searcher
-      howto
-    else
-      puts "Please make sure you install Ag (the silver searcher) for the plugin to work"
+  when Installer::MAC_OS then
+    `brew install ag`
+  when Installer::LINUX_OS
+    <<-howto
+      Please make sure you install Ag (the silver searcher) for the plugin to work
+      In Ubuntu, you can install it via
+      sudo add-apt-repository ppa:pgolm/the-silver-searcher
+      sudo apt-get update
+      sudo apt-get install the-silver-searcher
+    howto
+  else
+    puts "Please make sure you install Ag (the silver searcher) for the plugin to work"
   end
 end
 
@@ -80,8 +101,8 @@ def platform_files
   MAC_FILES
 end
 
-def prompt_to_copy_assets
-  print "Do you wish to copy the fonts to ~/Library/Fonts? [Y/n]"
+def prompt_user message, true_option="Y"
+  print message
   case $stdin.gets.chomp
     when 'Y','y' then
       true
