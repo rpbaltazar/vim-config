@@ -215,8 +215,15 @@ This plugin is a front for ag, A.K.A. the_silver_searcher.
 Ag can be used as a replacement for 153% of the uses of ack.
 This plugin will allow you to run ag from vim, and shows the results in a split window
 
-You have to first install ag, itself. On Mac+Homebrew, Gentoo Linux, several others,
-there's package named the_silver_searcher
+You have to first install ag, itself. The installation process should have prompted you to install the plugin
+or give you instructions on how to do it. If you haven't done so, you can either
+run
+```
+rake addons
+```
+or search for how to install the_silver_searcher in your operating system.
+
+On Mac+Homebrew, Gentoo Linux, several others, there's package named the_silver_searcher
 
 ### General use ###
 :Ag [options] {pattern} [{directory}]
