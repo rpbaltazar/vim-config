@@ -12,3 +12,7 @@ au BufNewFile,BufRead *.ejs set filetype=html
 
 " https://github.com/suan/vim-instant-markdown
 filetype plugin on
+
+if filereadable(glob("~/.vimrc.local"))
+  source ~/.vimrc.local
+endif

@@ -28,6 +28,7 @@ task :default do
   end
   Rake::Task['vundle'].execute
   Rake::Task['assets'].execute
+  Rake::Task['addons'].execute
 end
 
 desc "Install vundle for vim plugins"
