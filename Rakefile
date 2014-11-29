@@ -11,10 +11,6 @@ WITH_ASSETS = {
   "assets/custom_configs/inconsolata.vim" => "~/.vim/custom_configs/vim_looks.vim"
 }
 
-WITHOUT_ASSETS = {
-  "assets/custom_configs/monaco.vim" => "~/.vim/custom_configs/vim_looks.vim"
-}
-
 ADDONS = {
   "AG" => "Ag - the silver searcher"
 }
@@ -50,8 +46,8 @@ task :assets do
     assets = Installer.new WITH_ASSETS
     puts "Set Inconsolata font as default and set colorscheme to Tomorrow-Night-Eighties"
   else
-    assets = Installer.new WITHOUT_ASSETS
     puts "Set Monaco font as default and set colorscheme to Tomorrow-Night-Eighties"
+    return
   end
 
   assets.files.each do |f|

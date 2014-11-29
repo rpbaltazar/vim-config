@@ -112,3 +112,8 @@
 
 " different color for each paren pairs
 let vimclojure#ParenRainbow  = 1
+
+" default font and color scheme. Can be changed here, or loading a custom
+" config
+colorscheme Tomorrow-Night-Eighties
+set gfn=Monaco:h15
