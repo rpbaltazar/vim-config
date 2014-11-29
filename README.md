@@ -1,6 +1,7 @@
 ## Pre-requisites
 
-This config is built primarily to work on top of the OSX version of `MacVim`, by NEO but has been edited throughout time to add and remove stuff that I use more frenquently
+This config is built primarily to work on top of the OSX version of `MacVim`, by NEO but has been edited throughout time to add and remove
+stuff that I use more frenquently
 
 ## Install
 
@@ -18,8 +19,8 @@ Customizations can be added to the folder `.vim/custom_config/`.
 
 * Any files with a `.vim` extension in that folder will be loaded when running all versions of `vim`.
 
-You can add custom plugins by registering them in a `.vim` file in the custom_config folder with the same `Plugin "plugin-repo-url"`
-syntax used in the `.vim/common_config/plugin_config.vim`, and then performing steps 3 & 4 from the install steps above.
+You can add custom plugins by registering them in a `.vim` file in the custom_config folder with the same `Plugin "plugin-repo-url"` syntax
+used in the `.vim/common_config/plugin_config.vim`, and then performing steps 3 & 4 from the install steps above.
 
 Common practice is to symlink a folder containing your custom configuration files as the `.vim/custom_configs` folder.
 
@@ -76,9 +77,8 @@ Common practice is to symlink a folder containing your custom configuration file
 
 ## CtrlP
 
-Provides convenient ways to quickly reach the
-buffer/file/command/bookmark/tag you want. CtrlP searches with the
-fuzzy/partial pattern to which it converted an entered pattern.
+Provides convenient ways to quickly reach the buffer/file/command/bookmark/tag you want. CtrlP searches with the fuzzy/partial pattern to
+which it converted an entered pattern.
 
 * `<leader>t` - fuzzy find files
 * `<leader>b` - fuzzy find open buffers
@@ -97,10 +97,8 @@ Utility functions for working with lines, files, and elements.
 
 ## Syntastic
 
-Syntastic is a syntax checking plugin that runs buffers through external syntax
-checkers as they are saved and opened. If syntax errors are detected, the user
-is notified and is happy because they didn't have to compile their code or
-execute their script to find them.
+Syntastic is a syntax checking plugin that runs buffers through external syntax checkers as they are saved and opened. If syntax errors are
+detected, the user is notified and is happy because they didn't have to compile their code or execute their script to find them.
 
 ## Gundo
 
@@ -112,16 +110,13 @@ Awesome visual representation of `vim` undo tree.
 
 ## T-Comment
 
-TComment works like a toggle, i.e., it will comment out text that
-contains uncommented lines, and it will remove comment markup for
-already commented text (i.e. text that contains no uncommented lines).
+TComment works like a toggle, i.e., it will comment out text that contains uncommented lines, and it will remove comment markup for already
+commented text (i.e. text that contains no uncommented lines).
 
-If the file-type is properly defined, TComment will figure out which
-comment string to use. Otherwise you use |TCommentDefineType()| to
+If the file-type is properly defined, TComment will figure out which comment string to use.  Otherwise you use |TCommentDefineType()| to
 override the default choice.
 
-TComment can properly handle an embedded syntax, e.g., ruby/python/perl
-regions in vim scripts, HTML or JavaScript in php code etc.
+TComment can properly handle an embedded syntax, e.g., ruby/python/perl regions in vim scripts, HTML or JavaScript in php code etc.
 
 * `gc{motion}` - Toggle comments (for small comments within one line the &filetype_inline style will be used, if defined)
 * `gcc`        - Toggle comment for the current line
@@ -131,47 +126,32 @@ regions in vim scripts, HTML or JavaScript in php code etc.
 
 ## Fugitive
 
-I'm not going to lie to you; fugitive.vim may very well be the best
-Git wrapper of all time.  Check out these features:
+I'm not going to lie to you; fugitive.vim may very well be the best Git wrapper of all time.  Check out these features:
 
-View any blob, tree, commit, or tag in the repository with `:Gedit` (and
-`:Gsplit`, `:Gvsplit`, `:Gtabedit`, ...).  Edit a file in the index and
-write to it to stage the changes.  Use `:Gdiff` to bring up the staged
-version of the file side by side with the working tree version and use
-Vim's diff handling capabilities to stage a subset of the file's
-changes.
+View any blob, tree, commit, or tag in the repository with `:Gedit` (and `:Gsplit`, `:Gvsplit`, `:Gtabedit`, ...).  Edit a file in the index
+and write to it to stage the changes.  Use `:Gdiff` to bring up the staged version of the file side by side with the working tree version
+and use Vim's diff handling capabilities to stage a subset of the file's changes.
 
-Bring up the output of `git status` with `:Gstatus`.  Press `-` to
-`add`/`reset` a file's changes, or `p` to `add`/`reset` `--patch` that
+Bring up the output of `git status` with `:Gstatus`.  Press `-` to `add`/`reset` a file's changes, or `p` to `add`/`reset` `--patch` that
 mofo.  And guess what `:Gcommit` does!
 
-`:Gblame` brings up an interactive vertical split with `git blame`
-output.  Press enter on a line to reblame the file as it stood in that
-commit, or `o` to open that commit in a split.  When you're done, use
-`:Gedit` in the historic buffer to go back to the work tree version.
+`:Gblame` brings up an interactive vertical split with `git blame` output.  Press enter on a line to reblame the file as it stood in that
+commit, or `o` to open that commit in a split.  When you're done, use `:Gedit` in the historic buffer to go back to the work tree version.
 
-`:Gmove` does a `git mv` on a file and simultaneously renames the
-buffer.  `:Gremove` does a `git rm` on a file and simultaneously deletes
+`:Gmove` does a `git mv` on a file and simultaneously renames the buffer.  `:Gremove` does a `git rm` on a file and simultaneously deletes
 the buffer.
 
-Use `:Ggrep` to search the work tree (or any arbitrary commit) with
-`git grep`, skipping over that which is not tracked in the repository.
-`:Glog` loads all previous revisions of a file into the quickfix list so
-you can iterate over them and watch the file evolve!
+Use `:Ggrep` to search the work tree (or any arbitrary commit) with `git grep`, skipping over that which is not tracked in the repository.
+`:Glog` loads all previous revisions of a file into the quickfix list so you can iterate over them and watch the file evolve!
 
-`:Gread` is a variant of `git checkout -- filename` that operates on the
-buffer rather than the filename.  This means you can use `u` to undo it
-and you never get any warnings about the file changing outside Vim.
-`:Gwrite` writes to both the work tree and index versions of a file,
-making it like `git add` when called from a work tree file and like
-`git checkout` when called from the index or a blob in history.
+`:Gread` is a variant of `git checkout -- filename` that operates on the buffer rather than the filename.  This means you can use `u` to
+undo it and you never get any warnings about the file changing outside Vim.  `:Gwrite` writes to both the work tree and index versions of a
+file, making it like `git add` when called from a work tree file and like `git checkout` when called from the index or a blob in history.
 
-Use `:Gbrowse` to open the current file on GitHub, with optional line
-range (try it in visual mode!).  If your current repository isn't on
+Use `:Gbrowse` to open the current file on GitHub, with optional line range (try it in visual mode!).  If your current repository isn't on
 GitHub, `git instaweb` will be spun up instead.
 
-Add `%{fugitive#statusline()}` to `'statusline'` to get an indicator
-with the current branch in (surprise!) your statusline.
+Add `%{fugitive#statusline()}` to `'statusline'` to get an indicator with the current branch in (surprise!) your statusline.
 
 Oh, and of course there's `:Git` for running any arbitrary command.
 
@@ -201,77 +181,52 @@ This plugin currently supports
 
 ## "Project Drawer" aka NERDTree
 
-NERDTree is a file explorer plugin that provides "project drawer"
-functionality to your vim projects.  You can learn more about it with
+NERDTree is a file explorer plugin that provides "project drawer" functionality to your vim projects.  You can learn more about it with
 `:help NERDTree`.
 
-**Customizations**:
-Use `gt` to toggle NERDTree
+**Customizations**: Use `gt` to toggle NERDTree
 
 ## AG.vim
 
-The silver searcher.
-This plugin is a front for ag, A.K.A. the_silver_searcher.
-Ag can be used as a replacement for 153% of the uses of ack.
-This plugin will allow you to run ag from vim, and shows the results in a split window
+The silver searcher.  This plugin is a front for ag, A.K.A. the_silver_searcher.  Ag can be used as a replacement for 153% of the uses of
+ack.  This plugin will allow you to run ag from vim, and shows the results in a split window
 
-You have to first install ag, itself. The installation process should have prompted you to install the plugin
-or give you instructions on how to do it. If you haven't done so, you can either
-run
-```
-rake addons
-```
-or search for how to install the_silver_searcher in your operating system.
+You have to first install ag, itself. The installation process should have prompted you to install the plugin or give you instructions on
+how to do it. If you haven't done so, you can either run ``` rake addons ``` or search for how to install the_silver_searcher in your
+operating system.
 
 On Mac+Homebrew, Gentoo Linux, several others, there's package named the_silver_searcher
 
-### General use ###
-:Ag [options] {pattern} [{directory}]
+### General use ### :Ag [options] {pattern} [{directory}]
 
-### Gotchas ### (from github repo)
-Some characters have special meaning, and need to be escaped your search pattern. For instance, '#'.
-You have to escape it like this :Ag '\\\#define foo' to search for #define foo
+### Gotchas ### (from github repo) Some characters have special meaning, and need to be escaped your search pattern. For instance, '#'.  You
+have to escape it like this :Ag '\\\#define foo' to search for #define foo
 
-### Keyboard shortcuts ###
-e    to open file and close the quickfix window
-o    to open (same as enter)
-go   to preview file (open but maintain focus on ag.vim results)
-t    to open in new tab
-T    to open in new tab silently
-h    to open in horizontal split
-H    to open in horizontal split silently
-v    to open in vertical split
-gv   to open in vertical split silently
-q    to close the quickfix window
+### Keyboard shortcuts ### e    to open file and close the quickfix window o    to open (same as enter) go   to preview file (open but
+maintain focus on ag.vim results) t    to open in new tab T to open in new tab silently h    to open in horizontal split H    to open in
+horizontal split silently v    to open in vertical split gv   to open in vertical split silently q    to close the quickfix window
 
 ## Tabular
 
-Lets you align statements on their equal signs, make comment
-boxes, align comments, align declarations, etc.
+Lets you align statements on their equal signs, make comment boxes, align comments, align declarations, etc.
 
-Tabular's commands are based largely on regular expressions.  The basic
-technique used by Tabular is taking some regex to match field delimiters,
-splitting the input lines at those delimiters, trimming unnecessary spaces
-from the non-delimiter parts, padding the non-delimiter parts of the lines
-with spaces to make them the same length, and joining things back together
-again.
+Tabular's commands are based largely on regular expressions.  The basic technique used by Tabular is taking some regex to match field
+delimiters, splitting the input lines at those delimiters, trimming unnecessary spaces from the non-delimiter parts, padding the
+non-delimiter parts of the lines with spaces to make them the same length, and joining things back together again.
 
 For instance, consider starting with the following lines:
 
 
-    Some short phrase,some other phrase
-    A much longer phrase here,and another long phrase
+    Some short phrase,some other phrase A much longer phrase here,and another long phrase
 
 
-Let's say we want to line these lines up at the commas.  We can tell
-Tabularize to do this by passing a pattern matching , to the Tabularize
+Let's say we want to line these lines up at the commas.  We can tell Tabularize to do this by passing a pattern matching , to the Tabularize
 command:
 
     :Tabularize /,
 
 
-    Some short phrase         , some other phrase
-    A much longer phrase here , and another long phrase
+    Some short phrase         , some other phrase A much longer phrase here , and another long phrase
 
 
 **Customizations**
@@ -289,89 +244,70 @@ The following tabular patterns have been added:
 
 ## indent\_object
 
-Indent object creates a "text object" that is relative to the current
-ident. Text objects work inside of visual mode, and with `c` (change),
-`d` (delete) and `y` (yank). For instance, try going into a method in
-normal mode, and type `v ii`. Then repeat `ii`.
+Indent object creates a "text object" that is relative to the current ident. Text objects work inside of visual mode, and with `c` (change),
+`d` (delete) and `y` (yank). For instance, try going into a method in normal mode, and type `v ii`. Then repeat `ii`.
 
 ## text-object-ruby-block
 
-When textobj-rubyblock is installed you will gain two new text objects,
-which are triggered by `ar` and `ir` respectively. These follow Vim convention,
-so that `ar` selects all of a ruby block, and `ir` selects the inner portion
-of a rubyblock.
+When textobj-rubyblock is installed you will gain two new text objects, which are triggered by `ar` and `ir` respectively. These follow Vim
+convention, so that `ar` selects all of a ruby block, and `ir` selects the inner portion of a rubyblock.
 
-In ruby, a block is always closed with the end keyword. Ruby blocks may
-be opened using one of several keywords, including module, class, def, if,
-and do.
+In ruby, a block is always closed with the end keyword. Ruby blocks may be opened using one of several keywords, including module, class,
+def, if, and do.
 
 ## surround
 
-Surround allows you to modify "surroundings" around the current text.
-For instance, if the cursor was inside `"foo bar"`, you could type
+Surround allows you to modify "surroundings" around the current text.  For instance, if the cursor was inside `"foo bar"`, you could type
 `cs"'` to convert the text to `'foo bar'`.
 
 There's a lot more; check it out at `:help surround`
 
 ## SuperTab
 
-In insert mode, start typing something and hit `<TAB>` to tab-complete
-based on the current context.
+In insert mode, start typing something and hit `<TAB>` to tab-complete based on the current context.
 
 ## Tagbar
 
-Plugin for browsing the tags of source code files. It provides a
-sidebar that displays the ctags-generated tags of the current file, ordered by
-their scope. This means that for example methods in C++ are displayed under
-the class they are defined in.
+Plugin for browsing the tags of source code files. It provides a sidebar that displays the ctags-generated tags of the current file, ordered
+by their scope. This means that for example methods in C++ are displayed under the class they are defined in.
 
-**Customizations**: Binds `<leader>rt` to the ctags command to
-update tags. Bind `<leader>.` to toggle the taglist window
+**Customizations**: Binds `<leader>rt` to the ctags command to update tags. Bind `<leader>.` to toggle the taglist window
 
-**Note**: For full language support, run `brew install ctags` to install
-exuberant-ctags. Also if using OSX you may need to rename the system installed
-ctags version so that vim correctly finds the exuberant ctags version instead,
-`sudo mv /usr/bin/ctags /usr/bin/ctags_orig`. In addition, TagBar supports
-doctorjs/jsctags if installed for awesome tag support for javascript.
+**Note**: For full language support, run `brew install ctags` to install exuberant-ctags. Also if using OSX you may need to rename the
+system installed ctags version so that vim correctly finds the exuberant ctags version instead, `sudo mv /usr/bin/ctags
+/usr/bin/ctags_orig`. In addition, TagBar supports doctorjs/jsctags if installed for awesome tag support for javascript.
 
 
-**Tip**: Check out `:help ctags` for information about VIM's built-in
-ctag support. Tag navigation creates a stack which can traversed via
-`<C-]>` (to find the source of a token) and `<C-T>` (to jump back up
-one level).
+**Tip**: Check out `:help ctags` for information about VIM's built-in ctag support. Tag navigation creates a stack which can traversed via
+`<C-]>` (to find the source of a token) and `<C-T>` (to jump back up one level).
 
 ## Matchit / ruby-matchit
 
-Improves `vim` ability to jump back and forth between matching pairs of
-opening and ending items with `%`.
+Improves `vim` ability to jump back and forth between matching pairs of opening and ending items with `%`.
 
 
 ## Gist-vim
 
-Nice [gist integration](https://github.com/mattn/gist-vim) by mattn.
-Requires exporting your `GITHUB_TOKEN` and `GITHUB_USER` as environment
-variables or setup your [GitHub token config](http://help.github.com/git-email-settings/).
+Nice [gist integration](https://github.com/mattn/gist-vim) by mattn.  Requires exporting your `GITHUB_TOKEN` and `GITHUB_USER` as
+environment variables or setup your [GitHub token config](http://help.github.com/git-email-settings/).
 
 Try `:Gist`, `:Gist -p` and visual blocks.
 
 ## ZoomWin
 
-When working with split windows, ZoomWin lets you zoom into a window and
-out again using `<C-W> o`
+When working with split windows, ZoomWin lets you zoom into a window and out again using `<C-W> o`
 
 **Customizations**: Binds `<leader>z` to `:ZoomWin`
 
 ## Markdown Preview
 
-Markdown preview takes the current buffer, converts the Markdown to
-HTML, and opens it in your default browser.
+Markdown preview takes the current buffer, converts the Markdown to HTML, and opens it in your default browser.
 
 **Customizations**: Binds `<leader>mp` to this plugin.
 
 ## Other goodies
 
-* `:OpenHtml` - view the current file (or selected lines) in a browser
-  (for copying & pasting with syntax highlighting)
+* `:OpenHtml` - view the current file (or selected lines) in a browser (for copying & pasting with syntax highlighting)
 * `:Tidy` - tidy an HTML/XML file inline
 * `:AlignColons` - align all colon-separated content (CSS rules) in a file
 
@@ -389,4 +325,9 @@ Ships with a few additional syntaxes:
 
 ## Color schemes
 
+The default colorscheme is Tomorrow-Night-Eighties and the font is Monaco.
 
+This default configuration can be found under common_config/general_config.vim and can be overriden either there, or by adding a file with
+the format <filename>.vim to the custom_config folder. Also, if you want to use this setup in multiple machines but each one to have
+different configurations, you can do so by writing your very own .vimrc file and save it as .vimrc.local. This file will be loaded as the
+last resource and will override any other changes made previously.
