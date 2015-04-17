@@ -22,6 +22,7 @@
   Bundle "git://github.com/wgibbs/vim-irblack.git"
   Bundle "git://github.com/tpope/vim-abolish.git"
   Bundle "git://github.com/ap/vim-css-color.git"
+  Bundle "git://github.com/shime/vim-livedown.git"
 
 " Tabular for aligning text
   Plugin 'godlygeek/tabular'
@@ -41,8 +42,6 @@
 
     " shortcut to align text with Tabular
     map <Leader>a :Tabularize<space>
-
-  Plugin 'plasticboy/vim-markdown'
 
 " Colorschemes
 "" Gruvbox
@@ -118,13 +117,13 @@
 
 " Ruby focused unit test (wrapped in an if-loaded because it doesn't like
 " being loaded twice)
-  " if !exists(':RunRubyFocusedUnitTest')
-  "   Bundle "git://github.com/drewolson/ruby_focused_unit_test_vim.git"
-  "     nmap <Leader>ra :wa<CR> :RunAllRubyTests<CR>
-  "     nmap <Leader>rc :wa<CR> :RunRubyFocusedContext<CR>
-  "     nmap <Leader>rf :wa<CR> :RunRubyFocusedUnitTest<CR>
-  "     nmap <Leader>rl :wa<CR> :RunLastRubyTest<CR>
-  " endif
+  if !exists(':RunRubyFocusedUnitTest')
+    Bundle "git://github.com/drewolson/ruby_focused_unit_test_vim.git"
+      nmap <Leader>ra :wa<CR> :RunAllRubyTests<CR>
+      nmap <Leader>rc :wa<CR> :RunRubyFocusedContext<CR>
+      nmap <Leader>rf :wa<CR> :RunRubyFocusedUnitTest<CR>
+      nmap <Leader>rl :wa<CR> :RunLastRubyTest<CR>
+  endif
 
 " NERDTree for project drawer
   Bundle "git://github.com/scrooloose/nerdtree.git"
@@ -132,8 +131,6 @@
 
     nmap gt :NERDTreeToggle<CR>
     nmap g :NERDTree \| NERDTreeToggle \| NERDTreeFind<CR>
-
-
 
 " Unimpaired for keymaps for quicky manipulating lines and files
   Bundle "git://github.com/tpope/vim-unimpaired.git"
@@ -144,7 +141,6 @@
     " Bubble multiple lines
     vmap <C-Up> [egv
     vmap <C-Down> ]egv
-
 
 " Syntastic for catching syntax errors on save
   Bundle "git://github.com/scrooloose/syntastic.git"
