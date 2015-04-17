@@ -12,7 +12,9 @@ WITH_ASSETS = {
 }
 
 ADDONS = {
-  "AG" => "Ag - the silver searcher"
+  "AG" => "Ag - the silver searcher",
+  "livedown" => "node module for markdown live preview",
+  "js2coffee" => "node module for converting javascript to coffeescript"
 }
 
 desc "Install vim configuration and plugin files"
@@ -65,6 +67,10 @@ task :addons do
       case key
       when "AG"
         install_ag
+      when "livedown"
+        install_livedown
+      when "js2coffee"
+        install_js2coffee
       else
         <<-ERROR
          Installer not found for #{description}.
@@ -89,7 +95,29 @@ def install_ag
       sudo apt-get install the-silver-searcher
     howto
   else
-    puts "Please make sure you install Ag (the silver searcher) for the plugin to work"
+    puts "Please migrate yourself away from windows. Trust me. It'll save you a lot of trouble."
+  end
+end
+
+def install_livedown
+  case Installer.which_os?
+  when Installer::MAC_OS then
+    `npm install -g livedown`
+  when Installer::LINUX_OS
+    `npm install -g livedown`
+  else
+    puts "Please migrate yourself away from windows. Trust me. It'll save you a lot of trouble."
+  end
+end
+
+def install_js2coffee
+  case Installer.which_os?
+  when Installer::MAC_OS then
+    `npm install -g js2coffee`
+  when Installer::LINUX_OS
+    `npm install -g js2coffee`
+  else
+    puts "Please migrate yourself away from windows. Trust me. It'll save you a lot of trouble."
   end
 end
 

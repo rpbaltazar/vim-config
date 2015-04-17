@@ -1,7 +1,8 @@
 ## Pre-requisites
 
-This config is built primarily to work on top of the OSX version of `MacVim`, by NEO but has been edited throughout time to add and remove
-stuff that I use more frenquently
+This config was initially built by NEO and primarily focused to work on top of the OSX version of `MacVim`, but has been edited throughout time to add and remove stuff that I use less/more frenquently. It has also been updated to remove all windows support as I'm not familiar with the system and I won't be able to help you in case you run into problems.
+
+Please note that some of the plugins need aditional installation. The installing script should handle those, but please make sure you have [node](http://nodejs.org/) with [npm](https://www.npmjs.org/) installed.
 
 ## Install
 
@@ -285,7 +286,6 @@ system installed ctags version so that vim correctly finds the exuberant ctags v
 
 Improves `vim` ability to jump back and forth between matching pairs of opening and ending items with `%`.
 
-
 ## Gist-vim
 
 Nice [gist integration](https://github.com/mattn/gist-vim) by mattn.  Requires exporting your `GITHUB_TOKEN` and `GITHUB_USER` as
@@ -299,11 +299,35 @@ When working with split windows, ZoomWin lets you zoom into a window and out aga
 
 **Customizations**: Binds `<leader>z` to `:ZoomWin`
 
-## Markdown Preview
+## Livedown Preview
 
-Markdown preview takes the current buffer, converts the Markdown to HTML, and opens it in your default browser.
+Requires livedown module to be installed. You can do so by running
 
-**Customizations**: Binds `<leader>mp` to this plugin.
+```code
+npm install -g livedown
+```
+
+Open a markdown file and start the live preview server by running
+
+```code
+:LivePreview
+```
+
+## PasteAsCoffee
+
+Custom function that grabs contents from pbpaste, passes it through js2coffee and pastes it into the opened buffer
+
+Requires js2coffee to be installed. You can do so by running
+
+```code
+npm install -g js2coffee
+```
+
+There is also a shortcut for this function configured in the key_mappings file.
+
+```code
+<leader>pc
+```
 
 ## Other goodies
 
