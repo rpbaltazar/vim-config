@@ -47,16 +47,15 @@ task :assets do
   if prompt_user "Do you wish to copy the fonts to ~/Library/Fonts? [Y/n]\n"
     assets = Installer.new WITH_ASSETS
     puts "Set Inconsolata font as default and set colorscheme to Tomorrow-Night-Eighties"
+
+    assets.files.each do |f|
+      case
+        when f.identical? then skip_file f
+        else copy_files f
+      end
+    end
   else
     puts "Set Monaco font as default and set colorscheme to Tomorrow-Night-Eighties"
-    return
-  end
-
-  assets.files.each do |f|
-    case
-      when f.identical? then skip_file f
-      else copy_files f
-    end
   end
 end
 
