@@ -39,3 +39,8 @@ function! <SID>StripTrailingWhitespaces()
     call cursor(l, c)
 endfunction
 command! StripTrailingWhitespaces call <SID>StripTrailingWhitespaces()
+
+function! PasteAsCoffee()
+  :read !pbpaste | js2coffee
+endfunction
+command! PasteAsCoffee :call PasteAsCoffee()

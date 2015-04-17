@@ -73,4 +73,9 @@
   map H ^
 
 " convert buffer javascript into coffee
-  map <leader>pc :PasteAsCoffee<CR>
+  map <leader>pc :PasteAsCoffee<cr>
+
+" shortcut for NERDTreeFind
+  map <leader>nf :NERDTreeFind<cr>
+
+
