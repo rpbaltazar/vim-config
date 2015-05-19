@@ -23,6 +23,7 @@
   Bundle "git://github.com/tpope/vim-abolish.git"
   Bundle "git://github.com/ap/vim-css-color.git"
   Bundle "git://github.com/shime/vim-livedown.git"
+  Plugin 'rpbaltazar/vim-lodash-highlight'
 
 " Tabular for aligning text
   Plugin 'godlygeek/tabular'
@@ -50,6 +51,8 @@
   Plugin 'duythinht/vim-coffee'
 "" Gotham
   Plugin 'whatyouhide/vim-gotham'
+"" Inori Colorscheme
+  Plugin 'https://github.com/duythinht/inori'
 
 " Dash Searching"
   " Bundle "git@github.com:rizzatti/funcoo.vim.git"
@@ -85,7 +88,7 @@
 " Less
   Bundle "git://github.com/groenewege/vim-less.git"
     au BufNewFile,BufRead *.less set filetype=less
-
+"
 " Handlebars
   Bundle 'mustache/vim-mustache-handlebars'
 
@@ -117,13 +120,13 @@
 
 " Ruby focused unit test (wrapped in an if-loaded because it doesn't like
 " being loaded twice)
-  if !exists(':RunRubyFocusedUnitTest')
-    Bundle "git://github.com/drewolson/ruby_focused_unit_test_vim.git"
-      nmap <Leader>ra :wa<CR> :RunAllRubyTests<CR>
-      nmap <Leader>rc :wa<CR> :RunRubyFocusedContext<CR>
-      nmap <Leader>rf :wa<CR> :RunRubyFocusedUnitTest<CR>
-      nmap <Leader>rl :wa<CR> :RunLastRubyTest<CR>
-  endif
+  " if !exists(':RunRubyFocusedUnitTest')
+    " Bundle "git://github.com/drewolson/ruby_focused_unit_test_vim.git"
+  "     nmap <Leader>ra :wa<CR> :RunAllRubyTests<CR>
+  "     nmap <Leader>rc :wa<CR> :RunRubyFocusedContext<CR>
+  "     nmap <Leader>rf :wa<CR> :RunRubyFocusedUnitTest<CR>
+  "     nmap <Leader>rl :wa<CR> :RunLastRubyTest<CR>
+  " endif
 
 " NERDTree for project drawer
   Bundle "git://github.com/scrooloose/nerdtree.git"

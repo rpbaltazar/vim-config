@@ -1,2 +1,2 @@
-colorscheme Tomorrow-Night-Eighties
+colorscheme inori
 set gfn=Inconsolata:h15
