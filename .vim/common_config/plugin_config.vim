@@ -24,6 +24,13 @@
   Bundle "git://github.com/ap/vim-css-color.git"
   Bundle "git://github.com/shime/vim-livedown.git"
   Plugin 'rpbaltazar/vim-lodash-highlight'
+  Plugin 'marcweber/vim-addon-mw-utils'
+  Plugin 'garbas/vim-snipmate'
+  Plugin 'rcyrus/snipmate-snippets-rubymotion'
+  Plugin 'tomtom/tlib_vim.git'
+  Plugin 'jscappini/material.vim'
+  Plugin 'gilgigilgil/anderson.vim'
+  Plugin 'junegunn/vim-easy-align'
 
 " Tabular for aligning text
   Plugin 'godlygeek/tabular'
